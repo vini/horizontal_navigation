@@ -1,0 +1,117 @@
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+/* DESKTOP */
+@media (min-width:768px) {
+	
+    .desktop { display:block !important; }
+	img.desktop, span.desktop { display:inline-block !important; }
+	.mobile { display:none !important; }
+    
+}
+/* */
+
+/* MOBILE */
+@media (max-width:767.98px) {
+
+	.desktop { display:none !important; }
+	.mobile { display:block !important; }
+    img.mobile, span.mobile { display:inline-block !important; }
+    
+    /* */
+    html, body {
+        height: 100%;
+
+    }
+    body { 
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+    }
+    body, .section { 
+        width: 100%; 
+    }
+
+    .header { 
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background: transparent;
+        border:none;
+        width: 64px;
+        height: 55px;
+        opacity: 0.8;
+        background: #000 !important;
+        z-index: 999;
+     }
+
+    .section.inicio .logo-jambo { height:16em; }
+    
+    .section.inicio h2 { line-height:0.9em; }
+    .section.inicio span h3 { font-size:1em; }
+    .section.inicio h3 { line-height: 0.9em; }
+    
+    img.o-estudio { 
+        height: 50px;
+        float: left;
+    }
+
+    .section.nosso-jeito img.o-estudio {     
+        height: 55px;
+        float: left; 
+    }
+
+    .section.nosso-jeito-2 h3.lb {  
+        font-size:2em !important; 
+        margin-top:60px;
+    }
+    .section.nosso-jeito-2 img.plb-img {
+        position: absolute;
+        right: -20px;
+        height: 300px;
+        bottom: 60px;
+        z-index: 3;
+    }
+
+    .row-items-nj {
+        align-items: unset !important;    
+    }
+
+    .section.nosso-jeito { background: #f40b48; }
+
+    .section.contato { background-size:cover; }
+    .section.contato h3 { font-size:3em !important; }    
+
+    /* */
+}
+/* */
+
+@media (max-width:430px) {
+
+}
+
+@media (min-width:768px) and (max-width:1199.98px) {
+
+}
+
+@media (min-width:768px) {
+
+}
