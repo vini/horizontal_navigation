@@ -74,16 +74,16 @@
         float: left;
     }
 
-    .section.nosso-jeito img.o-estudio {     
+    .section.o-estudio img.o-estudio {     
         height: 55px;
         float: left; 
     }
 
-    .section.nosso-jeito-2 h3.lb {  
+    .section.o-estudio h3.lb {  
         font-size:2em !important; 
         margin-top:60px;
     }
-    .section.nosso-jeito-2 img.plb-img {
+    .section.o-estudio img.plb-img {
         position: absolute;
         right: -20px;
         height: 300px;
@@ -95,7 +95,7 @@
         align-items: unset !important;    
     }
 
-    .section.nosso-jeito { background: #f40b48; }
+    .section.o-estudio { background: #f40b48; }
 
     .section.contato { background-size:cover; }
     .section.contato h3 { font-size:3em !important; }    

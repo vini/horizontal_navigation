@@ -126,54 +126,68 @@
 }
 #lk_contato:hover { opacity:0.8; }
 
-.section { float:left; }
+.section { 
+    float:left; 
+    position:relative;
+}
 
 .section.inicio {
     height:100%;
     background:url(../img/bg_inicio.jpg) no-repeat left center;
+    background-size: cover;
 }
 
-.section.inicio .logo-jambo { height:400px; }
+.section.inicio .logo-jambo { height:500px; }
 .section.inicio span {
     display:inline-block;
     text-align:left;
 }
 .section.inicio span h2 {
-    font-size:4em;
-    color:#fff;
+    font-size: 4em;
+    color: #fff;
+    line-height: 0.8em;
 }
 .section.inicio span h3 {
-    font-size:2em;
-    color:#fff;
+    font-size: 1.5em;
+    color: #fff;
+    line-height: 0.9em;
 }
 
-.section.nosso-jeito {
+.section.o-estudio {
     height:100%;
     height:100%;
-    background:#f40b48 url(../img/bg_nosso-jeito.jpg) no-repeat 64px center;
+    background:#f40b48 url(../img/bg_o-estudio.jpg) no-repeat 25px center;
 }
 
-.section.nosso-jeito img.o-estudio {
+.section.o-estudio img.o-estudio {
     height: 130px;
     float: right;
 }
 
 
 
-.section.nosso-jeito-2 {
+.section.trabalhos {
+    height:100%;
+    height:100%;
+    background:#0ccf51;
+}
+
+
+
+.section.nosso-jeito {
     height:100%;
     height:100%;
     background:#ffa700;
 }
 
-.section.nosso-jeito-2 h3.lb {
+.section.nosso-jeito h3.lb {
     font-size: 5em !important;
     text-transform: uppercase !important;
     padding-left: 40px !important;
     position:relative;
     z-index:4;
 }
-.section.nosso-jeito-2 h3.lb span.active {
+.section.nosso-jeito h3.lb span.active {
     text-decoration-line: line-through;
     text-decoration-color: red;
     transition-property: all;
@@ -181,17 +195,17 @@
 
 }
 
-.section.nosso-jeito-2 h3.lb span {
+.section.nosso-jeito h3.lb span {
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;	
 }
-.section.nosso-jeito-2 h3.lb span:hover {
+.section.nosso-jeito h3.lb span:hover {
     cursor:pointer;
     opacity:0.8;
 }
 
-.section.nosso-jeito-2 img.plb-img {
+.section.nosso-jeito img.plb-img {
     display:none;
     position: absolute;
     right: 0px;
@@ -221,6 +235,22 @@
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;	
 }
-.section.contato .bt-seta-direita:hover {
-    opacity:0.7;
+.section.contato .bt-seta-direita:hover { opacity:0.7; }
+
+
+.page-number {
+    display: block;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    z-index: 99;
+}
+.page-number span {
+    display:none;
+    color:#fff;
+    font-size:1em;
+    font-weight:700;
+}
+.page-number span.active {
+    display:block;
 }

@@ -19,8 +19,6 @@
         <!-- AOS -->
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
         <!-- My Custom CSS -->
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/common.css">
@@ -28,10 +26,12 @@
         
         <!-- My Custom JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <script src="js/aos.js"></script>
 
-        <!--<script src="js/aos.js"></script>-->
-
-        <script src="js/wow.min.js"></script>
+        <!-- Start of HubSpot Embed Code -->
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7922963.js"></script>
+        <!-- End of HubSpot Embed Code -->
     </head>
 
     <body>
@@ -42,13 +42,13 @@
 
             <div id="hamb_text_menu">
                 <div id="nav-icon3"><span></span><span></span><span></span><span></span></div>
-                <!--<strong>MENU</strong>-->
             </div>
 
             <nav id="menu-mobile" class="nav">
 
                 <ul class="pages">
                     <li><a href="#inicio" data-goto="inicio">Início</a></li>
+                    <li><a href="#o-estudio" data-goto="o-estudio">O Estúdio</a></li>
                     <li><a href="#nosso-jeito" data-goto="nosso-jeito">Nosso Jeito</a></li>
                     <li><a href="#trabalhos" data-goto="trabalhos">Trabalhos</a></li>
                     <li><a href="#contato" data-goto="contato">Contato</a></li>
@@ -62,11 +62,13 @@
                     <li><a href="#contato" data-goto="contato">Contato</a></li>
                     <li><a href="#trabalhos" data-goto="trabalhos">Trabalhos</a></li>
                     <li><a href="#nosso-jeito" data-goto="nosso-jeito">Nosso Jeito</a></li>
+                    <li><a href="#o-estudio" data-goto="o-estudio">O Estúdio</a></li>
                     <li><a href="#inicio" data-goto="inicio">Início</a></li>
                 </ul>
 
                 <ul class="dots">
                     <li><span class="dot dot-inicio active"></span></li>
+                    <li><span class="dot dot-o-estudio"></span></li>
                     <li><span class="dot dot-nosso-jeito"></span></li>
                     <li><span class="dot dot-trabalhos"></span></li>
                     <li><span class="dot dot-contato"></span></li>
@@ -82,31 +84,35 @@
             
             <div class="container h-100">
 
-                <div class="row align-items-center h-100">
+                <div class="row align-items-center justify-content-center h-100">
                     <div class="col-md-6 col-sm-6 col-12">
-                        <img class="logo-jambo mx-auto d-block wow bounce" src="img/logo-jambo.png" alt="" />
+                        <img class="logo-jambo mx-auto d-block" src="img/logo-jambo.png" alt="" />
                     </div>    
-                    <div class="col-md-6 col-sm-6 text-center">
+                    <div class="col-md-4 col-sm-6 text-center">
                         <span>
-                            <h2 class="wow jello">Trans-<br />forma<br />-mos</h2>
-                            <h3 class="wow fadeInUp">marcas comuns<br />em marcas<br />de entretenimento.</h3>
+                            <h2>Trans-<br />forma<br />-mos</h2>
+                            <h3>marcas comuns<br />em marcas<br />de entretenimento.</h3>
                         </span>
                     </div>
                 </div>
 
             </div>
+
+            <div class="page-number">
+                <span class="active">01 //</span>
+            </div>    
         
         </section>
 
-        <section class="section nosso-jeito" id="nosso-jeito">
+        <section class="section o-estudio" id="o-estudio">
 
             <div class="container h-100">
 
                 <div class="row align-items-center h-100">
                     <div class="col-12">
-                    <div class="row justify-content-end">
-                        <div class="col-md-4 col-sm-4 col-12">
-                            <p class="blue bold wow fadeInRight">
+                    <div class="row justify-content-end" style="margin-bottom:32px;">
+                        <div class="col-md-5 col-sm-12 col-12">
+                            <p class="blue bold">
                                 Um time multidisciplinar e um poderoso framework<br />
                                 para construir plataformas inovadoras de entretenimento.
                             </p>
@@ -115,19 +121,18 @@
 
                     <div class="row justify-content-end" style="margin-bottom:32px;">
                         <div class="col-md-12 col-sm-12 col-12">
-                            <img class="o-estudio wow fadeInLeft" src="img/o_estudio.png" alt="" />
+                            <img class="o-estudio" src="img/o_estudio.png" alt="" />
                         </div>
                     </div>                
 
                     <div class="row justify-content-end">
-                        <div class="col-md-4 col-sm-4 col-12">
-                            <p class="wow fadeInRight">
-                                Somos um estúdio brasileiro (com todas as vantagens e desvantagens) e queremos valorizar isso. O mercado brasileiro é único: aqui a gente não tem tantas faculdades renomadas e, as vezes, isso nem conta na hora de uma contratação.
-                                A gente aprende na prática, vai criando os próprios memes e dando nosso jeitinho
-                                de fazer as coisas acontecerem.
-                                <br /><br />
-                                Para valorizar isso (o nosso mercado, os nossos profissionais, o nosso país) a gente luta para que tudo relembre o Brasil. A gente evita cargos em inglês e usar termos em inglês
-                                a não ser que seja extremamente necessário.
+                        <div class="col-md-5 col-sm-12 col-12">
+                            <p>
+                                Toda marca é também uma marca de entretenimento. Para explorar a força dessa nova perspectiva, 
+                                nosso time é ágil, multidisciplinar e enxuto. <br><br>
+                                Entendemos as complexidades das pessoas, produzimos conteúdos em diferentes formatos de forma ágil 
+                                e não engessada e enxergamos novas possibilidades comerciais para marcas. Rápido, inteligente e 
+                                carismático. Bem-vindo ao Estúdio Jambo.
                             </p>
                         </div>
                     </div>
@@ -137,13 +142,17 @@
 
             </div>
 
+            <div class="page-number">
+                <span class="active">02 //</span>
+            </div>    
+
         </section>
 
-        <section class="section nosso-jeito-2" id="nosso-jeito-2">
+        <section class="section nosso-jeito" id="nosso-jeito">
 
             <div class="container h-100">
 
-                <div class="row-items-nj row justify-content-start align-items-center h-100 wow fadeInRight">
+                <div class="row-items-nj row justify-content-start align-items-center h-100">
                     <div class="col-md-9 col-sm-12 col-12">
                         <h3 class="lb">
                         <span id="plb_planejamento" class="active">Planejamento</span><br />
@@ -161,6 +170,27 @@
                 </div>
             </div>
 
+            <div class="page-number">
+                <span class="active">03 //</span>
+            </div>    
+
+        </section>
+
+
+
+        <section class="section trabalhos" id="trabalhos">
+
+            <div class="container h-100">
+
+                <div class="row-items-nj row justify-content-start align-items-center h-100">
+              
+                </div>
+            </div>
+
+            <div class="page-number">
+                <span class="active">04 //</span>
+            </div>    
+
         </section>
 
 
@@ -174,16 +204,16 @@
                         
                         <div class="row justify-content-start desktop">
                             <div class="col-md-12 col-sm-12 col-12">
-                                <h3 class="wow fadeInRight">CON-</h3>
+                                <h3>CON-</h3>
                             </div>
                         </div>
 
                         <div class="row justify-content-start align-items-center h-100">
                             <div class="col-md-3 col-sm-12 col-12">
-                                <h3 class="desktop wow fadeInLeft">TA</h3>
+                                <h3 class="desktop">TA</h3>
                                 <h3 class="mobile">CONTATO</h3>
                             </div>
-                            <div class="col-md-9 col-sm-12 col-12 wow fadeInleft">
+                            <div class="col-md-9 col-sm-12 col-12">
                                 <form action="" method="post">
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12 col-12">
@@ -201,13 +231,17 @@
 
                         <div class="row justify-content-start desktop">
                             <div class="col-md-12 col-sm-12 col-12">
-                                <h3 class="wow fadeInleft">-TO</h3>
+                                <h3>-TO</h3>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            <div class="page-number">
+                <span class="active">05 //</span>
+            </div>    
 
         </section>
 
