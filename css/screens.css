@@ -79,21 +79,19 @@
         float: left; 
     }
 
-    .section.o-estudio h3.lb {  
+    .section.nosso-jeito h3.lb {  
         font-size:2em !important; 
         margin-top:60px;
     }
-    .section.o-estudio img.plb-img {
+    .section.nosso-jeito img.plb-img {
         position: absolute;
         right: -20px;
         height: 300px;
-        bottom: 60px;
+        bottom: 90px;
         z-index: 3;
     }
 
-    .row-items-nj {
-        align-items: unset !important;    
-    }
+    .row-items-nj { align-items: unset !important;    }
 
     .section.o-estudio { background: #f40b48; }
 
