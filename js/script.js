@@ -174,13 +174,33 @@ $(document).ready(function() {
 
 if(widthViewport > 768) {
 
-  
   $(window).on('wheel', function(event){
 
     // deltaY obviously records vertical scroll, deltaX and deltaZ exist too
     if(event.originalEvent.deltaY < 0){
+      
       // wheeled up
       console.log('scroll up ;)');
+      if(scrollIsRunning == false && !currentElement.hasClass('inicio')) {
+        
+        scrollIsRunning = true;
+
+        if(currentElement.hasClass('contato')) {
+          
+          scrollToLeft($('.contato').prev());    
+        
+        } else {
+
+          scrollToLeft(currentElement.prev());    
+        
+        }
+
+      }
+
+    } else {
+
+      // wheeled down
+      console.log('scroll down ;)');
 
       if(scrollIsRunning == false && !currentElement.hasClass('contato')) {
         
@@ -195,27 +215,6 @@ if(widthViewport > 768) {
             scrollToLeft(currentElement.next());    
           
           }
-
-      }
-
-    } else {
-
-      // wheeled down
-      console.log('scroll down ;)');
-
-      if(scrollIsRunning == false && !currentElement.hasClass('inicio')) {
-        
-        scrollIsRunning = true;
-
-        if(currentElement.hasClass('contato')) {
-          
-          scrollToLeft($('.contato').prev());    
-        
-        } else {
-
-          scrollToLeft(currentElement.prev());    
-        
-        }
 
       }
       
