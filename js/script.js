@@ -8,8 +8,9 @@ var scrollIsRunning = false;
 plbCurrentItem = $('#plb_planejamento');
 
 function scrollToLeft(element) {
-  
+    
   currentElement = element;
+
   console.log(currentElement.attr('class'));
 
   $('html, body').animate({
@@ -28,12 +29,19 @@ $(document).ready(function() {
 
   scrollToLeft(currentElement);
 
+  $('.logo-jambo').addClass('slideInFromLeft');  
+
+  $('.header').animate({
+    left: 0,
+  }, 750);
+
   /* SET WIDTH FOR SCROLL ON DESKTOP */
   if(widthViewport > 768) {
-    $('body').width(widthViewport * 5);
+    
+    $('body').width(widthViewport * 7);
     $('.section').width(widthViewport);
-
     $('#menu-desktop').height(heightViewport);
+  
   }
   /* */
 
@@ -140,14 +148,35 @@ $(document).ready(function() {
     console.log(goto);
 
     if(widthViewport > 768) {
+    
       scrollToLeft($('.' + goto));
+    
     } else {
+
       $('html, body').animate({
         scrollTop: $('.' + goto).offset().top
-    }, 2000);
+      }, 2000);
+    
     }
 
   });
+
+  $('.bt-ver-case').on('click', function (e) {
+    e.preventDefault();
+
+    if(widthViewport > 768) {
+    
+      scrollToLeft(currentElement.next());
+    
+    } else {
+
+      $('html, body').animate({
+        scrollTop: $('.trabalhos-case').offset().top
+      }, 2000);
+    
+    }
+
+  })
 
   $('.section.nosso-jeito h3 > span').on('click', function() {
     
@@ -166,6 +195,24 @@ $(document).ready(function() {
 
   $('#lk_contato').on('click', function(e) {
     scrollToLeft($('.contato'));
+  });
+
+  $('#lista_trabalhos li a').on('click', function(e) {
+    e.preventDefault();
+
+    $('#lista_trabalhos li').removeClass('active');
+
+    $(this).parent().addClass('active');
+
+    var target = $(this).attr('href').replace(/#/, "");
+
+    $('.trabalhos-case .container-case').hide();
+    $('.trabalhos-case .container-'+target).show();
+
+    $('.box-case').fadeOut('fast', function() {
+      $('#box_case_'+target).fadeIn();
+    });
+
   });
 
 });
@@ -211,7 +258,7 @@ if(widthViewport > 768) {
             scrollToLeft($('.inicio'));    
           
           } else {
-
+            
             scrollToLeft(currentElement.next());    
           
           }

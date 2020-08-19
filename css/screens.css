@@ -98,6 +98,82 @@
     .section.contato { background-size:cover; }
     .section.contato h3 { font-size:3em !important; }    
 
+
+    .section.nosso-jeito img#plb_principal_img {
+        height: 353px;
+        bottom: 85px;
+    }
+
+
+
+
+    .section.trabalhos { padding-top:85px; }
+    .section.trabalhos img.lb-trabalhos {
+        height: 120px;
+        top: 70%;
+    }
+    .section.trabalhos .box-case img { margin-bottom: 45px; }
+    .section.trabalhos p { padding-left:15px; }
+    .section.trabalhos #lista_trabalhos {
+        list-style: none;
+        float: right;
+        clear: both;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .section.trabalhos #lista_trabalhos li {
+        text-align: center;
+        margin-bottom: 12px;
+        float: left;
+        margin-right: 30px;
+    }
+    .section.trabalhos #lista_trabalhos li.active a {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #f704b0;
+    }
+    .section.trabalhos .col-cases { height:100%; }
+
+
+
+    .section.trabalhos-case .container-bayer .row-video-text { margin-top: 0px; }
+    .section.trabalhos-case .container-bayer .row-video-text iframe { height:260px; }
+    .section.trabalhos-case .container-bayer .row-video-text .col-text { padding-left:0px; }
+    .section.trabalhos-case { padding-left:15px; }
+    .section.trabalhos-case .container-bayer .row-text-title h3 {
+        padding-left: 0px;
+        margin-top: 0px;
+        color: #f704b0;
+        font-size: 1.3em;
+        font-weight: 400;
+    }
+    .section.trabalhos-case .container-bayer .col-img-title img { max-width:100%; }
+    .section.trabalhos-case .container-bayer .row-text-title {
+        margin-top: -30px;
+        margin-bottom: 15px;
+    }
+    
+
+
+
+    .section.trabalhos-case .container-jaguar .first-section .col-text {
+        padding-left: 0px;
+        margin-top: 15px;
+    }
+    .section.trabalhos-case .container-jaguar .col-img-title img { max-width: 100%; }
+    .section.trabalhos-case .container-jaguar .row-img-title h3 {
+        padding-left: 0px;
+        margin-top: 0px;
+        color: #f704b0;
+        font-size: 1.3em;
+        position: absolute;
+        top: 57%;
+        margin-top: -32px;
+        left: 25px;
+    }
+    .section.trabalhos-case .container-jaguar .row-img-title { margin-top: 30px; }
+    .section.trabalhos-case .container-jaguar { padding-top:85px; }
+
     /* */
 }
 /* */

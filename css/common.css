@@ -3,7 +3,7 @@ html, body {
     height: 100%;
 }
 body {
-    width:100%;
+    width:8196px;
     height:100vH;
     font-family: 'Darker Grotesque', sans-serif;
     font-size:16px;
@@ -17,6 +17,13 @@ body {
 
 .bold { font-weight:800; }
 
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
+
 .transparent { background: transparent; }
 
 .blue { color:#2af0fb; }
@@ -28,7 +35,16 @@ h1, h2, h3, h4, h5 {
     padding:0;
 }
 
+.chonburi { font-family: 'Chonburi', cursive; } 
+.darker-grotesque { font-family: 'Darker Grotesque', sans-serif; }
+
 p { line-height:1em; }
+
+.pl-0 { padding-left:0; }
+.pr-0 { padding-right:0; }
+
+.ml-0 { margin-left:0; }
+.mr-0 { margin-right:0; }
 
 *, *:focus { outline: none; }
 
