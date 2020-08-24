@@ -20,6 +20,14 @@ function scrollToLeft(element) {
     $('.dots li span').removeClass('active');
     $('.dots li span.dot-' + currentElement.attr('id')).addClass('active');
 
+    $('second-section').hide();
+
+    if(currentElement.attr('id') == 'inicio' || currentElement.attr('id') == 'contato') {
+      $('.header').addClass('menu-transparent');
+    } else {
+      $('.header').removeClass('menu-transparent');
+    }
+
     //AOS.refresh();
   });
 
@@ -44,6 +52,63 @@ $(document).ready(function() {
   
   }
   /* */
+
+  /*
+  $('.my-slider').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows:false,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows:false,
+          dots: true
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
+  */
+    
+ $('.my-slider').slick({
+  dots: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  variableWidth: true,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: "unslick"
+    },
+  ]
+});
 
   /* HAMB MENU */
   $('#hamb_text_menu').on('click', function() {
@@ -214,6 +279,39 @@ $(document).ready(function() {
     });
 
   });
+
+  $('.bt-section-voltar').on('click', function(e) {
+    e.preventDefault();
+
+    /*
+    var goto = $(this).data('goto');
+
+    $('#'+goto).show();
+
+    $('html, body').animate({
+      scrollTop: $('#'+goto).offset().top
+    }, 1000); 
+    */
+
+    scrollToLeft($('#trabalhos'));  
+
+  });
+
+  $('.bt-section-continuar').on('click', function(e) {
+    e.preventDefault();
+
+    var goto = $(this).data('goto');
+
+    $('html, body').animate({
+      scrollTop: $('#'+goto).offset().top
+    }, 1000, function() {
+      if(widthViewport > 768) {
+        $('#'+goto).prev().hide();
+      }
+    });
+
+  });
+
 
 });
 
