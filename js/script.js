@@ -11,7 +11,17 @@ function scrollToLeft(element) {
     
   currentElement = element;
 
-  console.log(currentElement.attr('class'));
+  if(currentElement.hasClass('trabalhos-case')) {
+    currentElement.closest('.section').css({
+      'height': 'auto',
+      'overflow': 'auto'
+    });
+  } else {
+    $('.trabalhos-case').css({
+      'height': '100%',
+      'overflow': 'hidden'
+    });
+  }
 
   $('html, body').animate({
     scrollLeft: element.position().left,
@@ -28,87 +38,30 @@ function scrollToLeft(element) {
       $('.header').removeClass('menu-transparent');
     }
 
-    //AOS.refresh();
   });
 
 }
 
 $(document).ready(function() {
 
-  scrollToLeft(currentElement);
-
-  $('.logo-jambo').addClass('slideInFromLeft');  
-
-  $('.header').animate({
-    left: 0,
-  }, 750);
-
   /* SET WIDTH FOR SCROLL ON DESKTOP */
   if(widthViewport > 768) {
     
-    $('body').width(widthViewport * 7);
+    $('body').width(widthViewport * 12);
     $('.section').width(widthViewport);
-    $('#menu-desktop').height(heightViewport);
+    $('.section').height(heightViewport + 36);
+    //$('.wrap-part-sections').height(heightViewport * 3);
+    //$('#menu-desktop').height(heightViewport);
+
+    scrollToLeft(currentElement);
+
+    $('.logo-jambo').addClass('slideInFromLeft');  
+  
+    $('.header').animate({
+      left: 0,
+    }, 750);
   
   }
-  /* */
-
-  /*
-  $('.my-slider').slick({
-    dots: false,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows:false,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows:false,
-          dots: true
-        }
-      }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
-  });
-  */
-    
- $('.my-slider').slick({
-  dots: false,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  variableWidth: true,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: "unslick"
-    },
-  ]
-});
 
   /* HAMB MENU */
   $('#hamb_text_menu').on('click', function() {
@@ -243,6 +196,7 @@ $(document).ready(function() {
 
   })
 
+  /*
   $('.section.nosso-jeito h3 > span').on('click', function() {
     
     var target = $(this).attr('id');
@@ -257,6 +211,7 @@ $(document).ready(function() {
       });    
 
   });
+  */
 
   $('#lk_contato').on('click', function(e) {
     scrollToLeft($('.contato'));
@@ -297,17 +252,23 @@ $(document).ready(function() {
 
   });
 
+
+  $('.bt-ir-para-contato').on('click', function(e) {
+    e.preventDefault();
+
+    scrollToLeft($('#contato'));  
+
+  });
+
+
   $('.bt-section-continuar').on('click', function(e) {
     e.preventDefault();
 
-    var goto = $(this).data('goto');
+    var goto = $(this).closest('.part-section').next('.part-section');
 
     $('html, body').animate({
-      scrollTop: $('#'+goto).offset().top
+      scrollTop: goto.offset().top
     }, 1000, function() {
-      if(widthViewport > 768) {
-        $('#'+goto).prev().hide();
-      }
     });
 
   });

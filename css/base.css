@@ -131,6 +131,13 @@
     display:block;
     float:left; 
     position:relative;
+
+    overflow:hidden;
+}
+
+.container-fluid .page-number {
+    right:82px;
+    bottom:32px;
 }
 
 /*.loaded .section {
@@ -276,19 +283,46 @@
     height:100%;
     background:#0ccf51;
 }
-.section.trabalhos-case { 
-    padding-left:64px; 
-    padding-top:0px;
+.section.trabalhos-case .container-fluid {
+    padding-left: 64px !important;
+    padding-top: 30px !important;
 }
 
+.section.trabalhos-case .part-section { overflow:hidden; }
+
+.row-bayer-parte-3 .col-text-bayer {
+    background:url(../img/rotate-bayer.png) no-repeat right bottom;
+    background-size:32px;
+}
+.row-bayer-parte-3 .bt-setas {
+    position: absolute;
+    right: -80px;
+    bottom: 200px;
+
+    transition-duration: 0.6s;
+    -webkit-transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+}
+.row-bayer-parte-3 .bt-setas:hover {
+    opacity:0.8;
+    cursor:pointer;
+}
+
+
 .section.trabalhos-case .container-bayer { display:block; }
-.section.trabalhos-case .container-bayer .row-img-title { margin-top:24px; }
+.section.trabalhos-case .container-bayer .row-img-title { 
+    margin-top: 30px;
+    padding-left: 15px;
+}
 .section.trabalhos-case .container-bayer { display:block; }
 .section.trabalhos-case .container-bayer .col-img-title { padding-left: 0px; }
 .section.trabalhos-case .container-bayer .col-img-title img { max-width:90% }
 
 .section.trabalhos-case .container-bayer .row-text-title { margin-top:-145px; }
-.section.trabalhos-case .container-bayer .row-video-text { margin-top:145px; }
+.section.trabalhos-case .container-bayer .row-video-text { 
+    margin-top:130px;
+    height:360px; 
+}
 .section.trabalhos-case .container-bayer .row-video-text p { 
     font-weight:600; 
     padding-right:70px;
@@ -300,7 +334,7 @@
     color: #f704b0;
     font-size: 2.5em;
 }
-
+.section.trabalhos-case .container-bayer { display:block; }
 
 
 
@@ -346,7 +380,7 @@
 }
 
 .section.nosso-jeito h3.lb {
-    font-size: 5.8em !important;
+    font-size: 5.5em !important;
     text-transform: uppercase !important;
     padding-left: 40px !important;
     position:relative;
@@ -355,7 +389,7 @@
 .section.nosso-jeito h3.lb span {
     float:left;
     clear:both;
-    line-height: 0.9em;
+    line-height: 1em;
     margin-bottom: 3px;
 }
 .section.nosso-jeito h3.lb span.active {
@@ -371,23 +405,25 @@
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;	
 }
+/*
 .section.nosso-jeito h3.lb span:hover {
     cursor:pointer;
     opacity:0.8;
 }
+*/
 
 .section.nosso-jeito img.plb-img {
-    display:none;
+    display: block;
     position: absolute;
-    right: 0px;
-    height: 238px;
+    right: 5px;
+    height: 345px;
     bottom: 0px;
     z-index: 3;
 }
 
 .section.nosso-jeito img#plb_principal_img {
-    height: 353px;
-    bottom: 36px;
+    height: 360px;
+    bottom: 52px;
 }
 
 
@@ -422,8 +458,10 @@
     /*box-shadow: 0px 6px 6px 1px #d4d4d4;*/
 }
 .section.contato .col-title {
-    margin-left:-12px;
-    padding-left:0px;
+    margin-left: -12px;
+    padding-left: 0px;
+    margin-top: 10px;
+    margin-top: 24px;
 }
 
 .page-number {
@@ -442,3 +480,8 @@
 .page-number span.active {
     display:block;
 }
+
+
+
+
+
