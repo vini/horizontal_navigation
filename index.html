@@ -85,7 +85,7 @@
                         <img class="logo-jambo mx-auto d-block" src="img/logo-jambo.png" alt="" />
                     </div>    
                     <div class="col-md-4 col-sm-6 text-center">
-                        <span class="slideInFromRight">
+                        <span>
                             <h2 class="chonburi">Trans-<br />forma<br />-mos</h2>
                             <h3 class="chonburi">marcas comuns<br />em marcas<br />de entretenimento.</h3>
                         </span>
@@ -174,7 +174,7 @@
                 <div class="row-items-nj row justify-content-start align-items-center h-100">
                     <div class="col-md-10 col-sm-12 col-12">
                         <h3 class="lb chonburi">
-                        <span id="plb_planejamento" class="active">Planejamento</span>
+                        <span id="plb_planejamento" class="has-animation active" data-animation="animation-line-through">Planejamento</span>
                         <span id="plb_criacao">Criação</span>
                         <span id="plb_midia">Mídia</span>
                         <span id="plb_producao">Produção</span>
@@ -198,7 +198,7 @@
                     <div class="col-md-10 col-sm-12 col-12">
                         <h3 class="lb chonburi">
                         <span id="plb_planejamento">Planejamento</span>
-                        <span id="plb_criacao" class="active">Criação</span>
+                        <span id="plb_criacao" class="has-animation active" data-animation="animation-line-through">Criação</span>
                         <span id="plb_midia">Mídia</span>
                         <span id="plb_producao">Produção</span>
                         <span id="plb_dados">Dados</span>
@@ -222,7 +222,7 @@
                         <h3 class="lb chonburi">
                         <span id="plb_planejamento">Planejamento</span>
                         <span id="plb_criacao">Criação</span>
-                        <span id="plb_midia" class="active">Mídia</span>
+                        <span id="plb_midia" class="has-animation active" data-animation="animation-line-through">Mídia</span>
                         <span id="plb_producao">Produção</span>
                         <span id="plb_dados">Dados</span>
                         </h3>
@@ -246,7 +246,7 @@
                         <span id="plb_planejamento">Planejamento</span>
                         <span id="plb_criacao">Criação</span>
                         <span id="plb_midia">Mídia</span>
-                        <span id="plb_producao" class="active">Produção</span>
+                        <span id="plb_producao" class="has-animation active" data-animation="animation-line-through">Produção</span>
                         <span id="plb_dados">Dados</span>
                         </h3>
                         <img class="plb-img" id="plb_producao_img" src="img/plb_producao.jpg" alt="" />
@@ -270,7 +270,7 @@
                         <span id="plb_criacao">Criação</span>
                         <span id="plb_midia">Mídia</span>
                         <span id="plb_producao">Produção</span>
-                        <span id="plb_dados" class="active">Dados</span>
+                        <span id="plb_dados" class="has-animation active" data-animation="animation-line-through">Dados</span>
                         </h3>
                         <img class="plb-img" id="plb_dados_img" src="img/plb_dados.jpg" alt="" />
                     </div>
@@ -295,32 +295,32 @@
             
                     <div class="mobile col-md-3 col-sm-12 col-12">
                         <ul id="lista_trabalhos">
-                            <li class="active"><a href="#bayer">Bayer</a></li>
-                            <li><a href="#jaguar">Jaguar</a></li>
+                            <li class="active"><a href="#jaguar">Jaguar</a></li>
+                            <li><a href="#bayer">Bayer</a></li>
                         </ul>
                     </div>
                     <div class="col-cases col-md-5 col-sm-12 col-12">
-                        <div id="box_case_bayer" class="box-case" style="display:block;">
-                            <a href="#ver-case-bayer" data-goto="trabalho-case-bayer" class="bt-ver-case">Ver Case >></a>
-                            <img src="img/trabalho-bayer.jpg" alt="" class="img-responsive" />
-                            <p>
-                                Se a maioria dos métodos contraceptivos tem a mesma eficiência por que 99% das 
-                                mulheres tomam pílula?
-                            </p>
-                        </div>
-                        <div id="box_case_jaguar" class="box-case">
-                            <a href="#ver-case-jaguar" data-goto="trabalho-case-jaguar" class="bt-ver-case">Ver Case >></a>
-                            <img src="img/trabalho-jaguar.gif" alt="" class="img-responsive" />
+                        <div id="box_case_jaguar" class="box-case" style="display:block;">
+                            <a href="#ver-case" class="bt-ver-case" data-case="jaguar">Ver Case >></a>
+                            <img src="img/trabalho-jaguar.gif" alt="" class="img-responsive bw" />
                             <p>
                                 A maioria das pessoas não tem ideia de como é acelerar um superesportivo.
                                 Será que ele ganha uma corrida contra um helicóptero?
                             </p>
                         </div>
+                        <div id="box_case_bayer" class="box-case">
+                            <a href="#ver-case" class="bt-ver-case" data-case="bayer">Ver Case >></a>
+                            <img src="img/trabalho-bayer.gif" alt="" class="img-responsive bw" />
+                            <p>
+                                Se a maioria dos métodos contraceptivos tem a mesma eficiência por que 99% das 
+                                mulheres tomam pílula?
+                            </p>
+                        </div>
                     </div>
                     <div class="desktop col-md-3 col-sm-12 col-12">
                         <ul id="lista_trabalhos">
-                            <li class="active"><a href="#bayer">Bayer</a></li>
-                            <li><a href="#jaguar">Jaguar</a></li>
+                            <li class="active"><a href="#jaguar">Jaguar</a></li>
+                            <li><a href="#bayer">Bayer</a></li>
                         </ul>
                     </div>
 
@@ -335,12 +335,102 @@
         </section>
 
 
-        <section class="section trabalhos-case" id="trabalhos-case">
+        <section class="section trabalhos-case" id="trabalhos-case" style="display:none;">
+
+            <div class="container-jaguar container-case active container-fluid h-100 pl-0 pr-0">
+
+                <div class="part-section first-section active" id="jaguar-parte-1" style="display:block;padding-bottom:40px;">
+                    <div class="row align-items-center">
+                        <div class="col-md-7 col-sm-12 col-12 pl-0">
+                            <img src="img/obj-jaguar.jpg" alt="" class="img-responsive" />
+                            <iframe id="iframe_1" width="500" height="260" src="https://www.youtube.com/embed/fJnTFxeojyc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="col-text col-md-3 col-sm-12 col-12">
+                            <p>
+                                Para conectar uma marca tradicional com o público jovem, criamos um desafio: 
+                                uma corrida entre um Jaguar e um helicóptero. Para pilotar, chamamos alguém que 
+                                não era piloto nem tinha acesso a carros luxuosos. 
+                                Tudo para passarmos o sentimento genuíno que esse carro provoca. 
+                                O escolhido foi o influenciador Andre Pilli.
+                            </p>
+                            <span class="break-space"></span>
+                            <a href="#continuar" class="bt-navigation bt-navigation-case active" data-decision="continue">Continuar >></a>
+                        </div>
+                    </div>
+
+                    <div class="row-img-title row justify-content-start">
+                        <div class="col-img-title col-md-12 col-sm-12 col-12">
+                            <img src="img/lb-jaguar.png" alt="jaguar" class="img-responsive" />
+                            <h3 class="darker-grotesque">Transformamos em imagens a emoção de dirigir um superesportivo.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="part-section second-section last-section" id="jaguar-parte-2">
+                    <div class="first-row row">
+                        <div class="col-md-8 col-sm-12 col-12 pl-0 pr-0">
+                            
+                            <div class="row">
+                                <div class="col-12 pr-0">
+                                    <img src="img/jaguar-1.jpg" alt="" class="img-responsive" />
+                                </div>
+                            </div>
+                            <div class="row justify-content-end" style="margin-top:-69px">
+                                <div class="col-5 pl-0 pr-0">
+                                    <!--<iframe width="100%" height="100%" src="https://www.youtube.com/embed/fJnTFxeojyc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                                    <img src="img/jaguar-2.jpg" alt="" class="img-responsive" />
+                                </div>
+                                <div class="col-3 pl-0 pr-0">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bzH3mmvN6TI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-3 pl-0 pr-0">
+                                    <img src="img/jaguar-4.jpg" alt="" class="img-responsive" style="position:absolute;bottom:0px" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-12">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <img src="img/jaguar-5.jpg" alt="" class="img-responsive" />
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-5">
+                                    <img src="img/jaguar-7.jpg" alt="" class="img-responsive" />
+                                </div>
+                                <div class="col-4 align-items-center">
+                                    <p class="bold">
+                                        A expedição foi tão 
+                                        bem-sucedida que 
+                                        rendeu um vlog de 
+                                        quase 30 minutos.
+                                    </p>
+                                    <span class="break-space"></span>
+                                    <a href="#voltar" class="bt-navigation bt-navigation-case" data-decision="back"><< Voltar</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="page-number">
+                    <span class="active">04.1 //</span>
+                </div>  
+
+            </div>  
+
+
 
             <div class="container-bayer container-case container-fluid h-100 pl-0 pr-0">
 
                 <!-- PRIMEIRA PARTE DA BAYER -->
-                <div class="part-section first-section" id="bayer-parte-1" style="padding-bottom:60px;min-height:667px;">
+                <div class="part-section first-section active" id="bayer-parte-1" style="padding-bottom:60px;min-height:667px;">
                     <div class="row-img-title row justify-content-start">
                         <div class="col-img-title col-md-12 col-sm-12 col-12">
                             <img src="img/bayer.png" alt="bayer" />
@@ -370,7 +460,7 @@
                                 contraceptivos e como eles se adaptam ao estilo de vida e fase de cada mulher.
                             </p>
                             <span class="break-space"></span>
-                            <a href="#continua-bayer" class="bt-section-continuar bt-link">Continua >></a>                        
+                            <a href="#continuar" class="bt-navigation bt-navigation-case active" data-decision="continue">Continuar >></a>
                         </div>
 
                     </div>
@@ -382,35 +472,50 @@
                 <div class="part-section second-section" id="bayer-parte-2" style="min-height:633px;">
 
                     <div class="row d-flex align-items-center">
-                        <div class="col-md-7 col-sm-12 col-12">
+                        <div class="col-md-8 col-sm-12 col-12">
+                            
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-12 pl-0 pr-0">
-                                    <iframe src="https://www.youtube.com/embed/T92eqznBUS4" width="100%" height="370" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/5Yo00hyPFj4" width="100%" height="370" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
+
                             <div class="row">
-                                <div class="col-md-6 col-sm-12 col-12 pl-0 pr-0">
-                                    <iframe src="https://www.youtube.com/embed/T92eqznBUS4" width="100%" height="180" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="col-md-4 col-sm-12 col-12 pl-0 pr-0">
+                                    <iframe src="https://www.youtube.com/embed/OhKKDRTV_Wc" width="100%" height="180" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
-                                <div class="col-md-6 col-sm-12 col-12 pl-0 pr-0">
-                                    <iframe src="https://www.youtube.com/embed/T92eqznBUS4" width="100%" height="180" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="col-md-4 col-sm-12 col-12 pl-0 pr-0">
+                                    <iframe src="https://www.youtube.com/embed/rXi4HDLIkSM" width="100%" height="180" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-md-4 col-sm-12 col-12 pl-0 pr-0">
+                                    <iframe src="https://www.youtube.com/embed/w9eBbp45Ghg" width="100%" height="180" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
+
                         </div>
-                        <div class="col-text-bayer col-md-4 col-sm-12 col-12">
-                            <div class="row">
+
+                        <div class="col-text col-md-3 col-sm-12 col-12">
+
+                            <img src="img/rotate-bayer.png" alt="" class="obj" />
+
+                            <div class="row-text row">
+
                                 <div class="col-md-12 col-sm-12 col-12">
                                     <p>
                                         Em um segundo momento, usamos as influenciadoras Juliana Louise, Karol Pinheiro, Macetes de Mãe e Cátia Damasceno para falarem sobre suas experiências pessoais, alimentando o assunto e diversificando o debate.
                                         Cada uma delas tem um público bem definido e assim conseguimos falar com mulheres jovens até as mais maduras.
                                     </p>        
                                 </div>
+
                             </div>
+
                             <div class="row">
+
                                 <div class="col-md-12 col-sm-12 col-12">
                                     <span class="break-space"></span>
-                                    <a href="#continua-bayer" class="bt-section-continuar bt-link">Continua >></a>                                
+                                    <a href="#continuar" class="bt-navigation bt-navigation-case" data-decision="continue">Continuar >></a>
                                 </div>
+
                             </div>
                         </div>
 
@@ -420,124 +525,32 @@
                 <!-- FIM SEGUNDA PARTE BAYER -->
 
                 <!-- TERCEIRA PARTE BAYER -->
-                <div class="part-section tree-section d-flex align-items-center" id="bayer-parte-3" style="min-height:633px;">
+                <div class="part-section tree-section last-section d-flex align-items-center" id="bayer-parte-3" style="min-height:633px;">
 
                     <div class="row-bayer-parte-3 row d-flex justify-content-center">
+
                         <div class="col-video-bayer col-md-7 col-sm-12 col-12">
-                            <iframe src="https://www.youtube.com/embed/T92eqznBUS4" width="100%" height="420" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/sMexIhcZ-cE" width="100%" height="420" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div class="col-text-bayer col-md-3 col-sm-12 col-12">
                             <p>
                                 Em um segundo momento, usamos as influenciadoras Juliana Louise, Karol Pinheiro, Macetes de Mãe e Cátia Damasceno para falarem sobre suas experiências pessoais, alimentando o assunto e diversificando o debate.
                                 Cada uma delas tem um público bem definido e assim conseguimos falar com mulheres jovens até as mais maduras.
                             </p>
-                            <img src="img/bt-setas.png" alt="" class="bt-ir-para-contato bt-setas" />
+                            <span class="break-space"></span>
+                            <a href="#voltar" class="bt-navigation bt-navigation-case" data-decision="back"><< Voltar</a>
                         </div>
+
                     </div>
                     
                 </div>
                 <!-- FIM TERCEIRA PARTE BAYER -->
 
                 <div class="page-number">
-                    <span class="active">04.1 //</span>
+                    <span class="active">04.2 //</span>
                 </div>    
 
-            </div>
-
-
-
-            <div class="container-jaguar container-case container-fluid h-100 pl-0 pr-0">
-
-                <div class="part-section first-section" id="jaguar-parte-1" style="display:block;padding-bottom:40px;">
-                    <div class="row align-items-center">
-                        <div class="col-md-7 col-sm-12 col-12 pl-0">
-                            <img src="img/obj-jaguar.jpg" alt="" class="img-responsive" />
-                        </div>
-                        <div class="col-text col-md-3 col-sm-12 col-12">
-                            <p>
-                                Para conectar uma marca tradicional com o público jovem, criamos um desafio: 
-                                uma corrida entre um Jaguar e um helicóptero. Para pilotar, chamamos alguém que 
-                                não era piloto nem tinha acesso a carros luxuosos. 
-                                Tudo para passarmos o sentimento genuíno que esse carro provoca. 
-                                O escolhido foi o influenciador Andre Pilli.
-                            </p>
-                            <span class="break-space"></span>
-                            <a href="#continuar" data-goto="jaguar-parte-2" class="bt-section-continuar bt-link">Continuar >></a>
-                        </div>
-                    </div>
-
-                    <div class="row-img-title row justify-content-start">
-                        <div class="col-img-title col-md-12 col-sm-12 col-12">
-                            <img src="img/lb-jaguar.png" alt="jaguar" class="img-responsive" />
-                            <h3 class="darker-grotesque">Transformamos em imagens a emoção de dirigir um superesportivo.</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="part-section second-section" id="jaguar-parte-2">
-                    <div class="first-row row">
-                        <div class="col-md-8 col-sm-12 col-12 pl-0 pr-0">
-                            
-                            <div class="row">
-                                <div class="col-12 pr-0">
-                                    <img src="img/jaguar-1.jpg" alt="" class="img-responsive" />
-                                </div>
-                            </div>
-                            <div class="row justify-content-end" style="margin-top:-69px">
-                                <div class="col-5 pl-0 pr-0">
-                                    <!--
-                                    <img src="img/jaguar-2.jpg" alt="" class="img-responsive" style="position:absolute;bottom:0px;right:0px;" />
-                                    -->
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/fJnTFxeojyc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                                </div>
-                                <div class="col-3 pl-0 pr-0">
-                                    <!--
-                                    <img src="img/jaguar-3.jpg" alt="" class="img-responsive" style="position:absolute;bottom:0px" />
-                                    -->
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bzH3mmvN6TI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="col-3 pl-0 pr-0">
-                                    <img src="img/jaguar-4.jpg" alt="" class="img-responsive" style="position:absolute;bottom:0px" />
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-md-4 col-sm-12 col-12">
-
-                            <div class="row">
-                                <div class="col-12">
-                                    <img src="img/jaguar-5.jpg" alt="" class="img-responsive" />
-                                </div>
-                            </div>
-                            <div class="row d-flex align-items-center">
-                                <div class="col-5">
-                                    <img src="img/jaguar-7.jpg" alt="" class="img-responsive" />
-                                </div>
-                                <div class="col-4 align-items-center">
-                                    <p class="bold">
-                                        A expedição foi tão 
-                                        bem-sucedida que 
-                                        rendeu um vlog de 
-                                        quase 30 minutos.
-                                    </p>
-                                    <span class="break-space"></span>
-                                    <a href="#voltar" data-goto="jaguar-parte-1" class="bt-section-voltar bt-link"><< Voltar</a>        
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="page-number">
-                    <span class="active">04.1 //</span>
-                </div>  
-
-            </div>      
+            </div>    
 
         </section>
 
@@ -549,22 +562,19 @@
             <div class="container h-100">
 
                 <div class="row align-items-center h-100">
+
                     <div class="col-md-8 col-sm-12 col-12">
                         
                         <div class="row justify-content-start">
+
                             <div class="col-title col-md-12 col-sm-12 col-12">
-                                <!--<h3>CON-</h3>-->
                                 <h3>CONTATO</h3>
                             </div>
+
                         </div>
 
                         <div class="row justify-content-start align-items-center h-100">
-                            <!--
-                            <div class="col-md-3 col-sm-12 col-12">
-                                <h3 class="desktop">CON</h3>
-                                <h3 class="mobile">CONTATO</h3>
-                            </div>
-                            -->
+
                             <div id="form_contato" class="col-md-8 col-sm-12 col-12 p-15">
                                 <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/shell.js"></script>
                                 <script>
@@ -573,31 +583,12 @@
                                     formId: "88ebf90a-8b69-4c7f-8b17-9f7c6a41c887"
                                 });
                                 </script>
-                                <!--
-                                <form id="" action="" method="post">
-                                    <div class="row">
-                                        <div class="col-md-8 col-sm-12 col-12">
-                                            <input type="text" name="nome" placeholder="Nome" />
-                                            <input type="text" name="email" placeholder="E-mail" />
-                                            <textarea id="txtMensagem" name="mensagem" placeholder="Mensagem"></textarea>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12 col-12 align-self-end text-center">
-                                            <button class="bt-seta-direita transparent" type="submit"><img src="img/bt-seta-direita.png" alt="" /></button>
-                                        </div>
-                                    </div>
-                                </form>
-                                -->
                             </div>
+
                         </div>
 
-                        <!--
-                        <div class="row justify-content-start desktop">
-                            <div class="col-md-12 col-sm-12 col-12">
-                                <h3>-TO</h3>
-                            </div>
-                        </div>
-                        -->
                     </div>
+
                 </div>
 
             </div>

@@ -1,7 +1,7 @@
 .header {
     position: fixed;
     top: 0px;
-    left: -64px;
+    left: 0px;
     background: transparent;
     border-right: 1px solid #fff;
     width: 64px;
@@ -290,6 +290,14 @@
 
 .section.trabalhos-case .part-section { overflow:hidden; }
 
+
+#bayer-parte-2 .col-text .obj {
+    position: absolute;
+    top: -160px;
+    right: 0px;
+    height: 160px;
+}
+
 .row-bayer-parte-3 .col-text-bayer {
     background:url(../img/rotate-bayer.png) no-repeat right bottom;
     background-size:32px;
@@ -340,6 +348,14 @@
 
 .section.trabalhos-case .container-jaguar { 
     display:none; 
+}
+
+.section.trabalhos-case #iframe_1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -120px;
 }
 
 .section.trabalhos-case .container-jaguar .second-section .first-row { background:#0ccf51; }
@@ -393,11 +409,6 @@
     margin-bottom: 3px;
 }
 .section.nosso-jeito h3.lb span.active {
-    text-decoration-line: line-through;
-    text-decoration-color: red;
-    transition-property: all;
-    transition-duration: 1s;    
-
 }
 
 .section.nosso-jeito h3.lb span {

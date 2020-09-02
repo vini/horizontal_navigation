@@ -1,9 +1,8 @@
-var currentElement = $('.inicio');
-
 var widthViewport = $(window).width();
 var heightViewport = $(window).height();
 
 var scrollIsRunning = false;
+var currentElement = $('.inicio');
 
 plbCurrentItem = $('#plb_planejamento');
 
@@ -12,30 +11,48 @@ function scrollToLeft(element) {
   currentElement = element;
 
   if(currentElement.hasClass('trabalhos-case')) {
+    
     currentElement.closest('.section').css({
       'height': 'auto',
       'overflow': 'auto'
     });
+
   } else {
+
     $('.trabalhos-case').css({
       'height': '100%',
       'overflow': 'hidden'
     });
+
   }
 
   $('html, body').animate({
+
     scrollLeft: element.position().left,
+  
   }, 1000, function() {
+
     scrollIsRunning = false;
+
     $('.dots li span').removeClass('active');
     $('.dots li span.dot-' + currentElement.attr('id')).addClass('active');
 
-    $('second-section').hide();
+    currentElement.find('.has-animation').addClass(currentElement.find('.has-animation').data('animation'));
+
+    if(currentElement.hasClass('trabalhos')) {
+      
+      $('.trabalhos-case').hide();
+
+    }
 
     if(currentElement.attr('id') == 'inicio' || currentElement.attr('id') == 'contato') {
+
       $('.header').addClass('menu-transparent');
+    
     } else {
+    
       $('.header').removeClass('menu-transparent');
+    
     }
 
   });
@@ -50,16 +67,8 @@ $(document).ready(function() {
     $('body').width(widthViewport * 12);
     $('.section').width(widthViewport);
     $('.section').height(heightViewport + 36);
-    //$('.wrap-part-sections').height(heightViewport * 3);
-    //$('#menu-desktop').height(heightViewport);
 
     scrollToLeft(currentElement);
-
-    $('.logo-jambo').addClass('slideInFromLeft');  
-  
-    $('.header').animate({
-      left: 0,
-    }, 750);
   
   }
 
@@ -180,12 +189,21 @@ $(document).ready(function() {
   });
 
   $('.bt-ver-case').on('click', function (e) {
+    
     e.preventDefault();
+
+    var target = $(this).data('case');
 
     if(widthViewport > 768) {
     
-      scrollToLeft(currentElement.next());
-    
+      $('.trabalhos-case').show(0, function() {
+        $('.container-case').hide(0, function() {
+          $('.container-'+target).show(0, function() {
+            scrollToLeft($('.trabalhos-case'));
+          });
+        });
+      });
+
     } else {
 
       $('html, body').animate({
@@ -194,24 +212,7 @@ $(document).ready(function() {
     
     }
 
-  })
-
-  /*
-  $('.section.nosso-jeito h3 > span').on('click', function() {
-    
-    var target = $(this).attr('id');
-
-    $('.section.nosso-jeito h3 span').removeClass('active');
-
-      $('.section.nosso-jeito .plb-img').stop().fadeOut('slow', function() {
-
-        $('#'+target).addClass('active')
-        $('#'+target+'_img').stop().fadeIn('slow');
-    
-      });    
-
   });
-  */
 
   $('#lk_contato').on('click', function(e) {
     scrollToLeft($('.contato'));
@@ -231,52 +232,51 @@ $(document).ready(function() {
 
     $('.box-case').fadeOut('fast', function() {
       $('#box_case_'+target).fadeIn();
+      $('.container-case').removeClass('active');
+      $('.container-'+target).addClass('active');
     });
 
   });
 
-  $('.bt-section-voltar').on('click', function(e) {
+  $('.bt-navigation-case').on('click', function(e) {
+    
     e.preventDefault();
+    var decision = $(this).data('decision');
 
-    /*
-    var goto = $(this).data('goto');
+    if(decision == 'continue') {
 
-    $('#'+goto).show();
+      var currentTarget = currentElement.find('.container-case.active .part-section.active');
+      var nextTarget = currentTarget.next(); 
 
-    $('html, body').animate({
-      scrollTop: $('#'+goto).offset().top
-    }, 1000); 
-    */
+      $('html, body').animate({ scrollTop: nextTarget.offset().top }, 1000, function() {
+      
+        currentTarget.removeClass('active');
+        nextTarget.addClass('active');
+        scrollIsRunning = false;
 
-    scrollToLeft($('#trabalhos'));  
+      });
+    
+    } else {
 
-  });
+      if(decision == 'back') {
+        
+        scrollToLeft($('.trabalhos'));    
+        $('.container-case').removeClass('active');
+        $('.container-case .part-section').removeClass('active');
+        $('.container-case .part-section.first-section').addClass('active');  
+        var targetCase = $('#lista_trabalhos li.active a').attr('href').replace(/#/, "");
+        $('.container-'+targetCase).addClass('active');   
 
+      }
 
-  $('.bt-ir-para-contato').on('click', function(e) {
-    e.preventDefault();
-
-    scrollToLeft($('#contato'));  
-
-  });
-
-
-  $('.bt-section-continuar').on('click', function(e) {
-    e.preventDefault();
-
-    var goto = $(this).closest('.part-section').next('.part-section');
-
-    $('html, body').animate({
-      scrollTop: goto.offset().top
-    }, 1000, function() {
-    });
+    }
 
   });
 
 
 });
 
-
+isInLastSection = false;
 
 if(widthViewport > 768) {
 
@@ -293,12 +293,51 @@ if(widthViewport > 768) {
 
         if(currentElement.hasClass('contato')) {
           
-          scrollToLeft($('.contato').prev());    
+          scrollToLeft($('.trabalhos'));    
         
         } else {
 
-          scrollToLeft(currentElement.prev());    
-        
+          console.log('entrou123');
+
+          if(currentElement.hasClass('trabalhos-case')) {
+
+            console.log('tem trabalhos-case');
+            
+            var currentTarget = currentElement.find('.container-case.active .part-section.active');
+            var nextTarget = currentTarget.prev(); 
+
+            if(nextTarget.length) {
+
+              $('html, body').animate({ scrollTop: nextTarget.offset().top }, 1000, function() {
+              
+                currentTarget.removeClass('active');
+                nextTarget.addClass('active');
+                scrollIsRunning = false;
+
+              });
+
+            } else {
+
+              scrollToLeft($('.trabalhos'));    
+              $('.container-case').removeClass('active');
+              $('.container-case .part-section').removeClass('active');
+              $('.container-case .part-section.first-section').addClass('active');  
+              var targetCase = $('#lista_trabalhos li.active a').attr('href').replace(/#/, "");
+              $('.container-'+targetCase).addClass('active');   
+
+            }
+
+          } else {
+
+            scrollToLeft(currentElement.prev()); 
+            $('.container-case').removeClass('active');
+            $('.container-case .part-section').removeClass('active');
+            $('.container-case .part-section.first-section').addClass('active');  
+            var targetCase = $('#lista_trabalhos li.active a').attr('href').replace(/#/, "");
+            $('.container-'+targetCase).addClass('active'); 
+            
+          }
+
         }
 
       }
@@ -312,14 +351,66 @@ if(widthViewport > 768) {
         
         scrollIsRunning = true;
 
-          if(currentElement.hasClass('contato')) {
-          
-            scrollToLeft($('.inicio'));    
-          
-          } else {
+          if(currentElement.hasClass('trabalhos')) {
             
-            scrollToLeft(currentElement.next());    
+            scrollToLeft($('.contato'));
           
+          } else {     
+            
+              if(currentElement.hasClass('contato')) {
+              
+                scrollToLeft($('.inicio'));    
+              
+              } else {
+
+                if(currentElement.hasClass('trabalhos-case')) {
+                  
+                  var currentTarget = currentElement.find('.container-case.active .part-section.active');
+                  var nextTarget = currentTarget.next(); 
+
+                  if(nextTarget.length) {
+      
+                    $('html, body').animate({ scrollTop: nextTarget.offset().top }, 1000, function() {
+                    
+                      currentTarget.removeClass('active');
+                      nextTarget.addClass('active');
+
+                      if(nextTarget.hasClass('last-section')) {
+                        isInLastSection = true;
+                      } else {
+                        isInLastSection = false;
+                      }
+
+                      scrollIsRunning = false;
+        
+                    });
+
+                  } else {
+
+                    scrollToLeft($('.trabalhos'));    
+                    $('.container-case').removeClass('active');
+                    $('.container-case .part-section').removeClass('active');
+                    $('.container-case .part-section.first-section').addClass('active');  
+                    var targetCase = $('#lista_trabalhos li.active a').attr('href').replace(/#/, "");
+                    $('.container-'+targetCase).addClass('active');   
+
+                  }
+      
+                } else {
+      
+                  scrollToLeft(currentElement.next());    
+                  $('.container-case').removeClass('active');
+                  $('.container-case .part-section').removeClass('active');
+                  $('.container-case .part-section.first-section').addClass('active');  
+                  var targetCase = $('#lista_trabalhos li.active a').attr('href').replace(/#/, "");
+                  $('.container-'+targetCase).addClass('active'); 
+                             
+                }                      
+              
+              }
+
+            //}
+
           }
 
       }

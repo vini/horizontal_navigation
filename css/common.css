@@ -35,7 +35,7 @@ body {
     margin:15px 0px;
 }
 
-.bt-link {
+.bt-navigation {
     font-weight: 600 !important;
     float: left;
     clear: both;
@@ -43,6 +43,11 @@ body {
 }
 
 .transparent { background: transparent; }
+
+.bw {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
 
 .blue { color:#2af0fb; }
 
@@ -52,6 +57,30 @@ h1, h2, h3, h4, h5 {
     margin:0;
     padding:0;
 }
+
+/* LINE ANIMATE */
+@keyframes animation-line-through {
+    0%   { width : 0; }
+    100% { width: 100%; }
+  }
+  .animation-line-through {
+    position: relative;
+  }
+  .animation-line-through::after {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 6px;
+    background: red;
+    animation-name: animation-line-through;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+  }
+  /* */
 
 .chonburi { font-family: 'Chonburi', cursive; } 
 .darker-grotesque { font-family: 'Darker Grotesque', sans-serif; }
