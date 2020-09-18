@@ -34,7 +34,8 @@
 	.desktop { display:none !important; }
 	.mobile { display:block !important; }
     img.mobile, span.mobile { display:inline-block !important; }
-    
+    .row.mobile { display:flex !important; }
+
     /* */
     html, body {
         height: 100%;
@@ -110,10 +111,10 @@
 
     .section.trabalhos { padding-top:85px; }
     .section.trabalhos img.lb-trabalhos {
-        height: 120px;
-        top: 70%;
+        height: 90px;
+        top: 65%;
     }
-    .section.trabalhos .box-case img { margin-bottom: 45px; }
+    .section.trabalhos .box-case img { margin-bottom: 30px; }
     .section.trabalhos p { padding-left:15px; }
     .section.trabalhos #lista_trabalhos {
         list-style: none;
@@ -141,7 +142,7 @@
     .section.trabalhos-case .container-bayer .row-video-text { margin-top: 0px; }
     /*.section.trabalhos-case .container-bayer .row-video-text iframe { height:260px; } */
     .section.trabalhos-case .container-bayer .row-video-text .col-text { padding-left:0px; }
-    .section.trabalhos-case { padding-left:15px; }
+    /*.section.trabalhos-case { padding-left:15px; }*/
     .section.trabalhos-case .container-bayer .row-text-title h3 {
         padding-left: 0px;
         margin-top: 0px;
@@ -160,7 +161,7 @@
 
 
     .section.trabalhos-case .container-jaguar .first-section .col-text {
-        padding-left: 0px;
+        padding-left: 15px;
         margin-top: 15px;
     }
     .section.trabalhos-case .container-jaguar .col-img-title img { max-width: 100%; }
@@ -208,6 +209,65 @@
     }
 
     /* */
+
+    .section.trabalhos-case .container-jaguar { display:block; }
+    .section.trabalhos-case .container-bayer { display:none; }
+
+    .section.trabalhos-case .container-bayer iframe { height:260px !important;}
+
+    .section.trabalhos-case .container-bayer .row-video-text  { height:auto !important; }
+
+    #bayer-parte-2 .col-text .obj { display:none !important; }
+    .row-bayer-parte-3 .col-text-bayer { background:unset !important; }
+
+    .break-space { display:none !important; }
+    .bt-navigation { display:none !important; }
+
+    .container-jaguar .first-section { padding-bottom:0px; }
+
+    .section.trabalhos-case .row-jaguars {
+        position:relative;
+        bottom:unset;
+    }
+    
+
+    .section.trabalhos-case .container-jaguar .obj-jaguar { display:none; }
+    .section.trabalhos-case #iframe_1 {
+        position: relative;
+        left: unset;
+        top: unset;
+        margin-left: unset;
+        margin-top: unset;
+    }
+    
+    .container-fluid .page-number {
+        right: 15px !important;
+        bottom: 15px !important;
+    }
+
+
+    /* TRABALHOS CASE */
+    .section.trabalhos-case { display:block !important; }
+    .section.trabalhos-case .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-top: 0px !important;
+    }
+    .section.trabalhos-case .container-case, .section.trabalhos-case .part-section {
+        min-height: auto !important;
+        height: auto !important;
+    }
+    /* */
+
+    .section.trabalhos-case .row-jaguars img { 
+        width:100%;
+        height:auto; 
+    }
+    .section.trabalhos-case iframe { height:260px; }
+
+    /* BAYER */
+    /* */
+
 }
 /* */
 
@@ -220,5 +280,14 @@
 }
 
 @media (min-width:768px) {
+
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : portrait) { 
+
+    .section.contato { padding-top:60px; }
 
 }

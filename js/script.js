@@ -6,6 +6,25 @@ var currentElement = $('.inicio');
 
 plbCurrentItem = $('#plb_planejamento');
 
+const animateCSS = (element, animation, prefix = 'animate__') =>
+  // We create a Promise and return it
+  new Promise((resolve, reject) => {
+    const animationName = `${prefix}${animation}`;
+    const node = document.querySelector(element);
+
+    node.classList.add(`${prefix}animated`, animationName);
+
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd() {
+      node.classList.remove(`${prefix}animated`, animationName);
+      node.removeEventListener('animationend', handleAnimationEnd);
+
+      resolve('Animation ended');
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd);
+  });
+
 function scrollToLeft(element) {
     
   currentElement = element;
@@ -59,6 +78,14 @@ function scrollToLeft(element) {
 
 }
 
+$(window).on('load', function() {
+  $('#loading').fadeOut('slow', function() {
+    //animateCSS('.logo-jambo', 'fadeInTopLeft').then((message) => {
+      // Do something after the animation
+    //});
+  });
+});
+
 $(document).ready(function() {
 
   /* SET WIDTH FOR SCROLL ON DESKTOP */
@@ -68,8 +95,12 @@ $(document).ready(function() {
     $('.section').width(widthViewport);
     $('.section').height(heightViewport + 36);
 
-    scrollToLeft(currentElement);
+    //scrollToLeft(currentElement);
   
+  } else {
+
+    $('.nosso-jeito .has-animation').addClass('animation-line-through');
+
   }
 
   /* HAMB MENU */
@@ -234,6 +265,12 @@ $(document).ready(function() {
       $('#box_case_'+target).fadeIn();
       $('.container-case').removeClass('active');
       $('.container-'+target).addClass('active');
+
+      if(widthViewport < 768) {
+        $('.container-case').hide();
+        $('.container-'+target).show();
+      }
+
     });
 
   });
@@ -287,6 +324,7 @@ if(widthViewport > 768) {
       
       // wheeled up
       console.log('scroll up ;)');
+
       if(scrollIsRunning == false && !currentElement.hasClass('inicio')) {
         
         scrollIsRunning = true;
@@ -296,8 +334,6 @@ if(widthViewport > 768) {
           scrollToLeft($('.trabalhos'));    
         
         } else {
-
-          console.log('entrou123');
 
           if(currentElement.hasClass('trabalhos-case')) {
 
@@ -328,7 +364,7 @@ if(widthViewport > 768) {
             }
 
           } else {
-
+          
             scrollToLeft(currentElement.prev()); 
             $('.container-case').removeClass('active');
             $('.container-case .part-section').removeClass('active');
@@ -350,6 +386,12 @@ if(widthViewport > 768) {
       if(scrollIsRunning == false && !currentElement.hasClass('contato')) {
         
         scrollIsRunning = true;
+
+        if(currentElement.hasClass('inicio')) {
+          animateCSS('.logo-jambo', 'fadeOutBottomLeft').then((message) => {
+            // Do something after the animation
+          });
+        }      
 
           if(currentElement.hasClass('trabalhos')) {
             

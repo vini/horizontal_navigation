@@ -236,7 +236,7 @@
     right: 0px;
     padding: 0px 12px;
     font-weight: 800;
-    z-index: 999;
+    z-index: 998;
     font-size: 1em;
 }
 .section.trabalhos .box-case .bt-ver-case:hover {
@@ -288,7 +288,10 @@
     padding-top: 30px !important;
 }
 
-.section.trabalhos-case .part-section { overflow:hidden; }
+.section.trabalhos-case .part-section { 
+    overflow:hidden; 
+    padding-bottom:70px;
+}
 
 
 #bayer-parte-2 .col-text .obj {
@@ -349,6 +352,12 @@
 .section.trabalhos-case .container-jaguar { 
     display:none; 
 }
+
+.section.trabalhos-case .row-jaguars {
+    position:absolute;
+    bottom:-76px;
+}
+.section.trabalhos-case .row-jaguars img, .section.trabalhos-case .row-jaguars iframe { height:191px; }
 
 .section.trabalhos-case #iframe_1 {
     position: absolute;
